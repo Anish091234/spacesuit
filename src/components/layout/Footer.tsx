@@ -39,17 +39,17 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-sm text-suit-silver">
               <li>
-                <a href="#about" className="hover:text-suit-white transition-colors">
+                <a href="/about" className="hover:text-suit-white transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-suit-white transition-colors">
+                <a href="/contact" className="hover:text-suit-white transition-colors">
                   Contact
                 </a>
               </li>
               <li>
-                <a href="#careers" className="hover:text-suit-white transition-colors">
+                <a href="/careers" className="hover:text-suit-white transition-colors">
                   Careers
                 </a>
               </li>

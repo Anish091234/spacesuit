@@ -26,35 +26,56 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <div className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-suit-blue to-mars-red" />
             <span className="text-lg sm:text-xl font-bold tracking-tight">
               MARS SUIT
             </span>
-          </div>
+          </a>
 
           <div className="hidden md:flex items-center gap-8">
             <a
-              href="#overview"
+              href="#helmet"
               className="text-sm text-suit-silver hover:text-suit-white transition-colors"
             >
-              Overview
+              Helmet
             </a>
             <a
-              href="#features"
+              href="#arms"
               className="text-sm text-suit-silver hover:text-suit-white transition-colors"
             >
-              Features
+              Arms
             </a>
             <a
-              href="#specs"
+              href="#chest"
               className="text-sm text-suit-silver hover:text-suit-white transition-colors"
             >
-              Specifications
+              Chest
             </a>
-            <button className="px-6 py-2 bg-suit-blue hover:bg-suit-blue/80 text-white rounded-full text-sm font-medium transition-colors">
+            <a
+              href="#torso"
+              className="text-sm text-suit-silver hover:text-suit-white transition-colors"
+            >
+              Torso
+            </a>
+            <a
+              href="#legs"
+              className="text-sm text-suit-silver hover:text-suit-white transition-colors"
+            >
+              Legs
+            </a>
+            <a
+              href="#boots"
+              className="text-sm text-suit-silver hover:text-suit-white transition-colors"
+            >
+              Boots
+            </a>
+            <a
+              href="/contact"
+              className="px-6 py-2 bg-suit-blue hover:bg-suit-blue/80 text-white rounded-full text-sm font-medium transition-colors inline-block"
+            >
               Contact
-            </button>
+            </a>
           </div>
         </div>
       </div>

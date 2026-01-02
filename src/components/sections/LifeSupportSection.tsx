@@ -13,7 +13,7 @@ export function LifeSupportSection() {
   ];
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-space-black to-space-dark py-20">
+    <section id="chest" className="relative min-h-screen bg-gradient-to-b from-space-black to-space-dark py-20">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: 3D Scene */}
