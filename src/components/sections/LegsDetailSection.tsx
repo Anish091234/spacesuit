@@ -2,7 +2,7 @@
 
 import { SlideIn } from '../animations/SlideIn';
 import { FadeIn } from '../animations/FadeIn';
-import { SpacesuitScene } from '../three/SpacesuitScene';
+import { RealSpacesuitScene } from '../three/RealSpacesuitScene';
 
 export function LegsDetailSection() {
   const features = [
@@ -59,7 +59,7 @@ export function LegsDetailSection() {
 
           {/* Right: 3D Scene */}
           <div className="h-[500px] rounded-3xl overflow-hidden border border-space-gray/20">
-            <SpacesuitScene highlightPart="legs" autoRotate={true} enableControls={true} />
+            <RealSpacesuitScene part="legs" autoRotate={true} enableControls={true} />
           </div>
         </div>
 

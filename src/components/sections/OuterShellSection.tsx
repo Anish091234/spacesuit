@@ -32,7 +32,6 @@ export function OuterShellSection() {
 
   return (
     <section
-      id="arms"
       ref={sectionRef}
       className="relative min-h-[200vh] bg-gradient-to-b from-space-black via-space-dark to-space-black"
     >
@@ -69,10 +68,10 @@ export function OuterShellSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <SlideIn key={feature.title} direction="up" delay={0.1 * index}>
-                <div className="bg-space-dark/50 backdrop-blur-sm border border-space-gray/30 rounded-2xl p-6 hover:border-suit-blue/50 transition-all">
+                <div className="bg-space-dark/50 backdrop-blur-sm border border-space-gray/30 rounded-2xl p-6 hover:border-suit-blue/50 transition-all h-full flex flex-col">
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-suit-silver text-sm mb-4">{feature.description}</p>
-                  <div className="inline-block px-3 py-1 bg-suit-blue/20 rounded-full">
+                  <p className="text-suit-silver text-sm mb-4 flex-grow">{feature.description}</p>
+                  <div className="inline-block px-3 py-1 bg-suit-blue/20 rounded-full w-fit">
                     <span className="text-suit-blue text-sm font-mono">{feature.metric}</span>
                   </div>
                 </div>

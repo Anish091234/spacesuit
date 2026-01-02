@@ -51,7 +51,7 @@ export function InnerShellSection() {
 
   return (
     <section
-      id="helmet"
+      id="features"
       ref={sectionRef}
       className="relative min-h-[200vh] bg-gradient-to-b from-space-black via-space-dark to-space-black"
     >

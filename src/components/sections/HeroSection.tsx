@@ -34,12 +34,18 @@ export function HeroSection() {
 
         <FadeIn delay={0.8}>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-4 bg-suit-blue hover:bg-suit-blue/80 text-white rounded-full font-medium transition-all hover:scale-105">
+            <a
+              href="#features"
+              className="px-8 py-4 bg-suit-blue hover:bg-suit-blue/80 text-white rounded-full font-medium transition-all hover:scale-105 text-center"
+            >
               Explore Features
-            </button>
-            <button className="px-8 py-4 bg-transparent border-2 border-suit-white hover:bg-suit-white hover:text-space-black text-white rounded-full font-medium transition-all">
+            </a>
+            <a
+              href="#specs"
+              className="px-8 py-4 bg-transparent border-2 border-suit-white hover:bg-suit-white hover:text-space-black text-white rounded-full font-medium transition-all text-center"
+            >
               View Specifications
-            </button>
+            </a>
           </div>
         </FadeIn>
 

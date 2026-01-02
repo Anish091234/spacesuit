@@ -1,10 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils/cn';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +15,17 @@ export function Navbar() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   return (
@@ -70,12 +83,55 @@ export function Navbar() {
             >
               Boots
             </a>
-            <a
-              href="/contact"
-              className="px-6 py-2 bg-suit-blue hover:bg-suit-blue/80 text-white rounded-full text-sm font-medium transition-colors inline-block"
-            >
-              Contact
-            </a>
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="px-6 py-2 bg-suit-blue hover:bg-suit-blue/80 text-white rounded-full text-sm font-medium transition-colors inline-flex items-center gap-2"
+              >
+                More
+                <svg
+                  className={cn(
+                    'w-4 h-4 transition-transform',
+                    dropdownOpen && 'rotate-180'
+                  )}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              {dropdownOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-space-dark border border-space-gray/30 rounded-2xl shadow-xl overflow-hidden z-50">
+                  <a
+                    href="/about"
+                    className="block px-6 py-3 text-sm text-suit-silver hover:text-suit-white hover:bg-space-gray/20 transition-colors"
+                    onClick={() => setDropdownOpen(false)}
+                  >
+                    About Us
+                  </a>
+                  <a
+                    href="/contact"
+                    className="block px-6 py-3 text-sm text-suit-silver hover:text-suit-white hover:bg-space-gray/20 transition-colors"
+                    onClick={() => setDropdownOpen(false)}
+                  >
+                    Contact
+                  </a>
+                  <a
+                    href="/careers"
+                    className="block px-6 py-3 text-sm text-suit-silver hover:text-suit-white hover:bg-space-gray/20 transition-colors"
+                    onClick={() => setDropdownOpen(false)}
+                  >
+                    Careers
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

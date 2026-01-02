@@ -62,10 +62,10 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Mars Suit. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-suit-silver">
-            <a href="#privacy" className="hover:text-suit-white transition-colors">
+            <a href="/privacy" className="hover:text-suit-white transition-colors">
               Privacy Policy
             </a>
-            <a href="#terms" className="hover:text-suit-white transition-colors">
+            <a href="/terms" className="hover:text-suit-white transition-colors">
               Terms of Service
             </a>
           </div>

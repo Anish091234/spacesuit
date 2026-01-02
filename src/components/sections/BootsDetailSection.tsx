@@ -2,7 +2,7 @@
 
 import { SlideIn } from '../animations/SlideIn';
 import { FadeIn } from '../animations/FadeIn';
-import { SpacesuitScene } from '../three/SpacesuitScene';
+import { RealSpacesuitScene } from '../three/RealSpacesuitScene';
 
 export function BootsDetailSection() {
   const features = [
@@ -34,7 +34,7 @@ export function BootsDetailSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left: 3D Scene */}
           <div className="h-[500px] rounded-3xl overflow-hidden border border-space-gray/20 order-2 lg:order-1">
-            <SpacesuitScene highlightPart="boots" autoRotate={true} enableControls={true} />
+            <RealSpacesuitScene part="boots" autoRotate={true} enableControls={true} />
           </div>
 
           {/* Right: Content */}
