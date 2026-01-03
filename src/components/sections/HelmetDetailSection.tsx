@@ -1,10 +1,14 @@
 'use client';
 
+import { useState } from 'react';
 import { SlideIn } from '../animations/SlideIn';
 import { FadeIn } from '../animations/FadeIn';
 import { RealSpacesuitScene } from '../three/RealSpacesuitScene';
+import { HUDOverlay } from '../hud/HUDOverlay';
+import { HUDSimulation } from '../hud/HUDSimulation';
 
 export function HelmetDetailSection() {
+  const [hudOpen, setHudOpen] = useState(false);
   const features = [
     {
       title: 'Advanced Visor Technology',
@@ -80,6 +84,42 @@ export function HelmetDetailSection() {
             </FadeIn>
           ))}
         </div>
+
+        {/* HUD Simulation CTA */}
+        <FadeIn delay={1.0}>
+          <div className="mt-16 flex justify-center">
+            <button
+              onClick={() => setHudOpen(true)}
+              className="group relative px-8 py-4 bg-gradient-to-r from-suit-blue/20 to-suit-blue/30 backdrop-blur-md border border-suit-blue/50 rounded-2xl hover:border-suit-blue hover:from-suit-blue/30 hover:to-suit-blue/40 transition-all shadow-lg hover:shadow-suit-blue/20"
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">👁️</span>
+                <div className="text-left">
+                  <div className="text-lg font-semibold text-white">Launch HUD Simulation</div>
+                  <div className="text-xs text-suit-silver">Experience the helmet&apos;s heads-up display</div>
+                </div>
+                <svg
+                  className="w-5 h-5 text-suit-blue group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </FadeIn>
+
+        {/* HUD Overlay */}
+        <HUDOverlay isOpen={hudOpen} onClose={() => setHudOpen(false)}>
+          <HUDSimulation />
+        </HUDOverlay>
       </div>
     </section>
   );
